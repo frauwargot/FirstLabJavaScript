@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table, th, td{border:1px solid black}
+    </style>
+</head>
+<body onload="page_load();">
+    <!--
+    lab
+        new page
+        1. at the click of a button, run javascript to:
+        display 7 random numbers ranging from 1 to 55
+        using a for loop
+
+        2. at the click of a button, run javascript to:
+           write a two rows and two columns table with border
+           (add any content you want)
+
+        3. at a click of a button, run javascript to:
+           display the numbers 10,20,30,....to 100 and their
+          square roots side by side (use a for loop)
+
+
+    -->
+<h3>Polina Vargot<br/>
+    Lab JavaScript<br/>
+    November 3, 2016<br/></h3>
+
+    <h4>
+    1. At the click of a button, run javascript to:
+        display 7 random numbers ranging from 1 to 55
+        using a for loop
+    </h4>
+
+    <button onclick="Generate7RandomNumbers1to55();">Display 7 random numbers ranging from 1 to 55</button>
+    <h4>
+    <br/>
+     2. At the click of a button, run javascript to:
+           write a two rows and two columns table with border
+           (add any content you want)
+    </h4> 
+       
+    <button onclick="CreateATable();">Write a two rows and two columns table with border</button>
+    <h4>
+        <br />
+    3. At a click of a button, run javascript to:
+        display the numbers 10,20,30,....to 100 and their
+        square roots side by side (use a for loop)
+    </h4>
+
+    <button onclick="DisplayNumbersAndSqRoots();">Display the numbers 10,20,30, to 100 and their square roots</button>
+    <p id="display"></p>
+    
+<script>
+    var displayarea;
+    function page_load()
+    {
+        displayarea = document.getElementById("display");
+    }
+    function Generate7RandomNumbers1to55()
+    {
+        displayarea.innerHTML += "<br/>";
+        for (var i = 0; i < 7; i++)
+        {
+            var a = Math.floor((Math.random() * 56) + 1);
+            displayarea.innerHTML += a + "<br/>";
+        }
+    }
+    function CreateATable()
+    {
+        displayarea.innerHTML += "<br/><table>"+
+        "<tr>"+
+            "<th>Property</th>"+
+            "<th>Description</th>"+
+        "</tr>"+
+        "<tr>"+
+            "<td>List-style-image</td>"+
+            "<td>Specifies If the list-item should apper inside or outside the content flow</td>"+
+       "</tr>"+
+       "<tr>"+
+        "<td>list-style-type</td>"+
+        "<td>Specifies the type of list-item marker</td>"+
+        "</tr>"+
+        "</table>";
+    }
+    function DisplayNumbersAndSqRoots()
+    {
+        displayarea.innerHTML += "<br/>";
+        for (var i = 10; i <= 100; i += 10)
+        {            
+            displayarea.innerHTML += "Number: " + i + " and SqRoot: " + Math.sqrt(i) + "<br/>";
+        }
+    }
+</script>
+    
+
+</body>
+</html>
